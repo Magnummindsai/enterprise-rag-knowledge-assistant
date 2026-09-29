@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Policy Assistant · Enterprise RAG</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">◆</span>
+      <div>
+        <h1>Policy Assistant</h1>
+        <p class="subtitle">Answers from Northwind Dynamics policies, with sources</p>
+      </div>
+    </div>
+    <div class="status">
+      <span id="mode-badge" class="badge">connecting…</span>
+      <span id="stack-info" class="muted small"></span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section>
+        <h2>Try asking</h2>
+        <ul id="examples" class="examples">
+          <li>How many days of annual leave do I get?</li>
+          <li>What is the hotel rate cap in London?</li>
+          <li>Can I fly business class to Singapore?</li>
+          <li>How much PTO can I roll over?</li>
+          <li>When do I need three quotes for a purchase?</li>
+          <li>I think my laptop was stolen, what should I do?</li>
+          <li>Can I use ChatGPT with customer data?</li>
+          <li>What is the capital of France?</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Knowledge base</h2>
+        <ul id="doc-list" class="doc-list"><li class="muted">Loading…</li></ul>
+      </section>
+    </aside>
+
+    <section class="chat">
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="empty-state">
+          <h2>Ask a question about company policy</h2>
+          <p>Leave, travel &amp; expenses, IT security, procurement and remote work.
+             Every answer links to the policy sections it came from.</p>
+        </div>
+      </div>
+      <form id="ask-form" class="composer">
+        <textarea id="question" rows="1" maxlength="1000"
+          placeholder="e.g. What's the per diem for international travel?" required></textarea>
+        <button id="send" type="submit">Ask</button>
+      </form>
+    </section>
+
+    <aside class="sources" id="sources-panel">
+      <h2>Sources</h2>
+      <div id="sources" class="muted">Citations for the latest answer appear here.</div>
+      <details id="trace-box" class="trace" hidden>
+        <summary>Pipeline trace</summary>
+        <ol id="trace"></ol>
+      </details>
+    </aside>
+  </main>
+
+  <footer class="footer">Built by <strong>Magnum Minds AI</strong> · Synthetic data only</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

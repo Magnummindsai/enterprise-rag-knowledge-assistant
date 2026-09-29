@@ -1,0 +1,21 @@
+# --- API ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-dotenv>=1.0
+
+# --- Orchestration & LLM ---
+langgraph>=0.2.50
+openai>=1.50
+
+# --- Retrieval ---
+faiss-cpu>=1.9
+rank-bm25>=0.2.2
+numpy>=1.26
+transformers>=4.40           # BGE cross-encoder reranker
+torch>=2.2                   # CPU build is sufficient
+
+# --- Persistence ---
+sqlalchemy>=2.0
+psycopg[binary]>=3.2         # only used when DATABASE_URL points to Postgres
